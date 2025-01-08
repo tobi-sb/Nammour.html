@@ -1,0 +1,83 @@
+/**
+ * generate modal css when modal is open it will visible and when modal is close it will hidden
+ */
+.main {
+  position: relative;
+}
+.modal {
+  width: 400px;
+  height: fit-content;
+  padding: 15px;
+  background-color: aquamarine;
+  margin: auto;
+  display: none;
+  position: relative;
+}
+.btn-close {
+  position: absolute;
+  font-size: x-large;
+  top: 5px;
+  right: 15px;
+  cursor: pointer;
+}
+.modal.open {
+  display: block; /* show the modal when it is open */
+  position: absolute; /* position the modal on top of the page */
+  top: 20px;
+  right: 0;
+  background-color: #e6dfd6; /* add a semi-transparent background */
+  z-index: 9999; /* ensure the modal is on top of other elements */
+  overflow-y: auto; /* enable vertical scrolling if needed */
+  border: solid 1px brown;
+}
+.modal-header {
+  padding: 10px;
+}
+
+.modal-body {
+  padding: 10px;
+}
+
+.product-info {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.cart-img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.product-details {
+  flex-grow: 1;
+}
+
+.modal-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 35px;
+  text-decoration: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: #007bff;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+}
+
+.styled-link {
+  text-decoration: underline;
+  color: inherit;
+  text-align: center;
+}

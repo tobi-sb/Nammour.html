@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paramètres du compte</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .settings-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .settings-section {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        .settings-section h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .update-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .update-btn:hover {
+            background-color: #45a049;
+        }
+
+        .loading {
+            display: none;
+            margin-left: 10px;
+        }
+
+        /* Add auth dropdown styles */
+        .auth-icon {
+            position: relative;
+        }
+        .auth-dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        .auth-dropdown button {
+            padding: 8px 16px;
+            width: 100%;
+            border: none;
+            background: none;
+            cursor: pointer;
+            text-align: left;
+            white-space: nowrap;
+        }
+        .auth-dropdown button:hover {
+            background: #f5f5f5;
+        }
+        .auth-icon:hover .auth-dropdown {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <!--Nav-->
+<div class="top"><p class="top-p">BIENVENUE SUR LA BOUTIQUE</p></div>
+<nav class="navbar">
+  <div class="container n-flexbox">
+    <div class="navbar-left">
+      <div class="hamburger-menu" id="hamburger" onclick="toggleMenu()">
+        <!-- Hamburger Icon -->
+        <span id="hamburger-icon"><i class="fa-solid fa-bars"></i></span>
+        <!-- Close Icon (Initially hidden) -->
+        <span id="close-icon" style="display: none;"><i class="fa-solid fa-xmark"></i></span>
+      </div>
+      <div class="search-icon">
+        <!-- Search Icon (Initially visible) -->
+        <span id="search-icon" onclick="toggleSearch()"><i class="fa-solid fa-magnifying-glass"></i></span>
+        <!-- Search Form (Initially hidden) -->
+        <div class="search-div" id="search-div">
+          <div class="main_search">
+            <form class="search-form" action="" id="search-form">
+              <input type="text" id="search-input" name="query" placeholder="Search..." required>
+            </form>
+            <img onclick="closeSearch()" src="./Images/cross.svg" alt="" id="cross" class="cross">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar-center">
+      <div class="logo">
+        <!-- Replace with your logo -->
+        <a href="./index.Html"><img src="./Images/Logo 2.webp" alt="Logo"></a>
+      </div>
+    </div>
+    <div class="navbar-right">
+      <div class="cart-icon">
+        <!-- Cart Icon -->
+        <a href="./cart.html"><span><i class="fa-solid fa-cart-shopping"></i></span></a>
+        <span class="cart-count">0</span>
+      </div>
+      <div class="auth-icon">
+        <a href="login.html"><span><i class="fa-solid fa-user"></i></span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hamburger Menu -->
+  <div id="menu" class="menu">
+    <ul>
+      <li><a href="./index.Html">Accueil</a></li>
+      <li><a href="./Catalouge.html">Catalogue</a></li>
+      <li><a href="./bougie-bijoux.html">Bougie Bijoux</a></li>
+      <li><a href="./bougies-gourmandes.html">Bougies gourmandes</a></li>
+      <li><a href="./brûleurs-diffuseurs.html">Brûleurs / Diffuseurs</a></li>
+      <li><a href="./galets-fondants.html">Galets / Fondants</a></li>
+      <li><a href="./poudre-magique.html">Poudre Magique</a></li>
+      <li><a href="./bougie-de-massage.html">Bougie de Massage</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+
+    <div class="settings-container">
+        <div class="settings-section">
+            <h2>Paramètres du compte</h2>
+            <form id="profile-form">
+                <div class="form-group">
+                    <label for="fullName">Nom complet</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" readonly>
+                </div>
+                <button type="submit" class="update-btn">
+                    Mettre à jour
+                    <span class="loading"><i class="fas fa-spinner fa-spin"></i></span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <script type="module" src="settings.js"></script>
+    <script type="module" src="auth.js"></script>
+</body>
+</html> 

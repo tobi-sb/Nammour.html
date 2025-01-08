@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Catelouge</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="./Style.css" />
+  </head>
+  <body>
+    <!--Nav-->
+    <!--Nav-->
+<div class="top"><p class="top-p">BIENVENUE SUR LA BOUTIQUE</p></div>
+<nav class="navbar">
+  <div class="container n-flexbox">
+    <div class="navbar-left">
+      <div class="hamburger-menu" id="hamburger" onclick="toggleMenu()">
+        <!-- Hamburger Icon -->
+        <span id="hamburger-icon"><i class="fa-solid fa-bars"></i></span>
+        <!-- Close Icon (Initially hidden) -->
+        <span id="close-icon" style="display: none;"><i class="fa-solid fa-xmark"></i></span>
+      </div>
+      <div class="search-icon">
+        <!-- Search Icon (Initially visible) -->
+        <span id="search-icon" onclick="toggleSearch()"><i class="fa-solid fa-magnifying-glass"></i></span>
+        <!-- Search Form (Initially hidden) -->
+        <div class="search-div" id="search-div">
+          <div class="main_search">
+            <form class="search-form" action="" id="search-form">
+              <input type="text" id="search-input" name="query" placeholder="Search..." required>
+            </form>
+            <img onclick="closeSearch()" src="./Images/cross.svg" alt="" id="cross" class="cross">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar-center">
+      <div class="logo">
+        <!-- Replace with your logo -->
+        <a href="./index.Html"><img src="./Images/Logo 2.webp" alt="Logo"></a>
+      </div>
+    </div>
+    <div class="navbar-right">
+      <div class="cart-icon">
+        <!-- Cart Icon -->
+        <a href="./cart.html"><span><i class="fa-solid fa-cart-shopping"></i></span></a>
+        <span class="cart-count">0</span>
+      </div>
+      <div class="auth-icon">
+        <a href="login.html"><span><i class="fa-solid fa-user"></i></span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hamburger Menu -->
+  <div id="menu" class="menu">
+    <ul>
+      <li><a href="./index.Html">Accueil</a></li>
+      <li><a href="./Catalouge.html">Catalogue</a></li>
+      <li><a href="./bougie-bijoux.html">Bougie Bijoux</a></li>
+      <li><a href="./bougies-gourmandes.html">Bougies gourmandes</a></li>
+      <li><a href="./brûleurs-diffuseurs.html">Brûleurs / Diffuseurs</a></li>
+      <li><a href="./galets-fondants.html">Galets / Fondants</a></li>
+      <li><a href="./poudre-magique.html">Poudre Magique</a></li>
+      <li><a href="./bougie-de-massage.html">Bougie de Massage</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+  <!-- Hamburger Menu -->
+  <div id="menu" class="menu">
+    <ul>
+        <li><a href="./index.Html">Accueil</a></li>
+        <li><a href="./Catalouge.html">Catalogue</a></li>
+        <li><a href="./bougie-bijoux.html">Bougie Bijoux</a></li>
+        <li><a href="./bougies-gourmandes.html">Bougies gourmandes</a></li>
+        <li><a href="./brûleurs-diffuseurs.html">Brûleurs / Diffuseurs</a></li>
+        <li><a href="./galets-fondants.html">Galets / Fondants</a></li>
+        <li><a href="./poudre-magique.html">Poudre Magique</a></li>
+        <li><a href="./bougie-de-massage.html">Bougie de Massage</a></li>
+        <li><a href="./contact.html">Contact</a></li>
+    </ul>
+  </div>
+
+  </nav>
+
+    <!-- Product -->
+    <div class="product-page">
+      <h2 style="justify-content: flex-start; margin-bottom: 20px">Produits</h2>
+      <div class="filter-part">
+        <div class="filter-part-1">
+          <p>Filtre :</p>
+          <div class="availability">
+            <div id="availability">Availability <i class="fa fa-angle-down"></i></div>
+            <div class="availability_hover">
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #ccc;">
+                <p>0 sélectionnés</p>
+                <p>Réinitialiser</p>
+              </div>
+              <div class="">
+                <div>
+                  <input type="checkbox" value="en_stock" />
+                  En stock (<span id="stock_count">0</span>)
+                </div>
+                <div>
+                  <input type="checkbox" value="de_stock" />
+                  En rupture de stock (0)
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="prices">
+            <div id="prices">Price <i class="fa fa-angle-down"></i></div>
+            <div class="price_hover">
+              <div style="display: flex; justify-content: space-between; border-bottom: 1px solid #ccc;">
+                <p>Le prix le plus élevé est de €<span id="highest_price">44,00</span></p>
+                <p>Réinitialiser</p>
+              </div>
+              <div class="price_area">
+                <div>
+                  <span>€</span>
+                  <input type="text" id="min_price"/>
+                </div>
+                <div>
+                  <span>€</span>
+                  <input type="text" id="max_price"/>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="filter-part-2">
+          <div class="filter-part-2-1">
+            <p>Trier par :</p>
+            <select name="sort_by" class="caption-large" id="SortBy">
+              <option value="best-selling" selected="selected">Meilleures ventes</option>
+              <option value="title-ascending" >Alphabétique, de A à Z</option>
+              <option value="title-descending">Alphabétique, de Z à A</option>
+              <option value="price-ascending">Prix: faible à élevé</option>
+              <option value="price-descending">Prix: élevé à faible</option>
+            </select>
+          </div>
+          <div><span id="product_count">0</span> produits</div>
+        </div>
+      </div>
+      <div class="products">
+        <!-- Repeat this block for each product -->
+        <!-- End of product block -->
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content container">
+        <!-- Paragraph -->
+        <p>Soyez les premiers à connaître les nouvelles collections et les offres exclusives</p>
+    
+        <!-- Newsletter Input -->
+        <div class="newsletter">
+          <input type="email" placeholder="E-mail" />
+          <button type="submit">
+            <span>&rarr;</span>
+          </button>
+        </div>          
+    
+        <!-- Card Icons -->
+        <div class="card-icons">
+          <img src="./Images/visa_icon.png" alt="Visa" />
+          <img src="./Images/mastercard_payment_icon.png" alt="MasterCard" />
+          <img src="./Images/amex_card_credit_logo_logos_icon.png" alt="American Express" />
+          <img src="./Images/discover_card_method_icon.png" alt="Discover" />
+          <img src="./Images/paypal_icon.png" alt="PayPal" />
+          <img src="./Images/apple_card_credit_logo_logos_icon.png" alt="Apple Pay" />
+        </div>
+    
+        <!-- Navigation Links -->
+        <nav class="footer-nav">
+          <a href="">© 2024, Un Namour de Bougies</a>
+          <a href="">Politique de remboursement</a>
+          <a href="">Politique de confidentialité</a>
+          <a href="">Conditions d'utilisation</a>
+          <a href="">Politique d'expédition</a>
+          <a href="">Coordonnées Conditions générales de vente</a>
+          <a href="">Mentions légales</a>
+        </nav>
+      </div>
+    </footer>
+
+    <script src="./script.js"></script>
+    <script src="nav.js"></script>
+    <script type="module" src="./product_filter.js"></script>
+  </body>
+</html>

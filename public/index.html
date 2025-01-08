@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un Amour de Bougies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <link rel="stylesheet" href="./Style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <!--Nav-->
+    <!--Nav-->
+<!--Nav-->
+<div class="top"><p class="top-p">BIENVENUE SUR LA BOUTIQUE</p></div>
+<nav class="navbar">
+  <div class="container n-flexbox">
+    <div class="navbar-left">
+      <div class="hamburger-menu" id="hamburger" onclick="toggleMenu()">
+        <!-- Hamburger Icon -->
+        <span id="hamburger-icon"><i class="fa-solid fa-bars"></i></span>
+        <!-- Close Icon (Initially hidden) -->
+        <span id="close-icon" style="display: none;"><i class="fa-solid fa-xmark"></i></span>
+      </div>
+      <div class="search-icon">
+        <!-- Search Icon (Initially visible) -->
+        <span id="search-icon" onclick="toggleSearch()"><i class="fa-solid fa-magnifying-glass"></i></span>
+        <!-- Search Form (Initially hidden) -->
+        <div class="search-div" id="search-div">
+          <div class="main_search">
+            <form class="search-form" action="" id="search-form">
+              <input type="text" id="search-input" name="query" placeholder="Search..." required>
+            </form>
+            <img onclick="closeSearch()" src="./Images/cross.svg" alt="" id="cross" class="cross">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar-center">
+      <div class="logo">
+        <!-- Replace with your logo -->
+        <a href="./index.Html"><img src="./Images/Logo 2.webp" alt="Logo"></a>
+      </div>
+    </div>
+    <div class="navbar-right">
+      <div class="cart-icon">
+        <!-- Cart Icon -->
+        <a href="./cart.html"><span><i class="fa-solid fa-cart-shopping"></i></span></a>
+        <span class="cart-count">0</span>
+      </div>
+      <div class="auth-icon">
+        <a href="login.html"><span><i class="fa-solid fa-user"></i></span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hamburger Menu -->
+  <div id="menu" class="menu">
+    <ul>
+      <li><a href="./index.Html">Accueil</a></li>
+      <li><a href="./Catalouge.html">Catalogue</a></li>
+      <li><a href="./bougie-bijoux.html">Bougie Bijoux</a></li>
+      <li><a href="./bougies-gourmandes.html">Bougies gourmandes</a></li>
+      <li><a href="./brûleurs-diffuseurs.html">Brûleurs / Diffuseurs</a></li>
+      <li><a href="./galets-fondants.html">Galets / Fondants</a></li>
+      <li><a href="./poudre-magique.html">Poudre Magique</a></li>
+      <li><a href="./bougie-de-massage.html">Bougie de Massage</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+    <!-- Hero section -->
+    <section class="container">
+        <div class="hero">
+        <div class="hero-image">
+            <img src="./Images/IMG_0025.webp" alt="Candles Store Image">
+        </div>
+        <div class="hero-content">
+            <h1>Votre magasin de bougies artisanales sur Béziers</h1>
+            <p>
+                Découvrez l'harmonie lumineuse avec Un Amour de Bougies, l'atelier artisanal de Mélinda
+                niché au cœur de Béziers, au 24 Bis Rue de la Citadelle. Chaque bougie est une œuvre d'art,
+                façonnée à la main avec passion et dévouement. Nos créations sont uniques et illuminent vos espaces.
+            </p>
+            <p>
+                Parcourez notre collection exclusive, alliant savoir-faire artisanal et amour pour la lumière.
+                Rendez-vous au centre-ville de Béziers pour découvrir l'éclat intemporel d'Un Amour de Bougies, 
+                où chaque lueur raconte une histoire.
+            </p>
+            <p>
+                Embrassez la magie de la lumière artisanale chez nous, au 5 rue de la citadelle.
+            </p>
+            <a href="./Catalouge.html" class="Main-button">Voir la boutique</a>
+        </div>
+        </div>
+        <h2 class="slider-title">Bougies du moment</h2>
+        <p class="slider-description">Explorez notre collection exquise, où chaque bougie raconte une histoire d'amour avec l'artisanat. Plongez dans l'éclat doux de nos créations, et laissez Un Namour de Bougies illuminer vos moments spéciaux.</p>
+    </section>
+    
+
+
+    <!--Product section-->
+    <div class="slider-container container">
+        <div class="slider">
+            <div class="slider-track">
+                <div class="slider-item">
+                    <a href="./sproduct.html" class="product-item" id="p-1">
+                        <div class="image-wrapper">
+                            <img src="./Images/product11.webp" alt="Product Image" class="img-product-00" data-hover-image="./Images/product12.webp" />
+                        </div>
+                        <h3>Bougie de massage</h3>
+                        <p>Du €15,00 EUR</p>
+                      </a>
+                </div>
+                <div class="slider-item">
+                    <a class="product-item" href="./sproduct.html" id="p-2" >
+                        <div class="image-wrapper">
+                            <img src="./Images/product21.webp" alt="Product Image" class="img-product-00" data-hover-image="./Images/product22.webp"/>
+                        </div>  
+                        <h3>Bougie Gourmande AGRUMES</h3>
+                        <p>Du €25,00 EUR</p>
+                      </a>
+                </div>
+                <div class="slider-item ">
+                    <a href="./sproduct.html" class="product-item" id="p-3" >
+                        <div class="image-wrapper">
+                            <img src="./Images/Product31.webp" alt="Product Image" class="img-product-00" data-hover-image="./Images/product32.webp" />
+                        </div>
+                        <h3>Bougie Gourmande BANANE</h3>
+                        <p>Du €25,00 EUR</p>
+                      </a>
+                </div>
+                <div class="slider-item">
+                    <a class="product-item" href="./sproduct.html" id="p-4" >
+                        <div class="image-wrapper">
+                            <img src="./Images/product41.webp" alt="Product Image" class="img-product-00" data-hover-image="./Images/product42.webp" />
+                        </div>
+                        <h3>Bougie Gourmande CERISE NOIRE EXPLOSIVE</h3>
+                        <p>Du €25,00 EUR</p>
+                      </a>
+                </div>
+                <div class="slider-item">
+                    <a href="./sproduct.html" class="product-item" id="p-5" >
+                        <div class="image-wrapper">
+                            <img src="./Images/product51.webp" alt="Product Image" class="img-product-00" data-hover-image="./Images/product52.webp"/>
+                        </div>
+                        <h3>Bougie Gourmande CITRON MERINGUÉ</h3>
+                        <p>Du €25,00 EUR</p>
+                      </a>
+                </div>
+                <div class="slider-item">
+                    <a href="./sproduct.html" class="product-item" id="p-6" >
+                        <div class="image-wrapper">
+                        <img src="./Images/product61.webp" alt="Product Image" class="img-product-00" data-hover-image="./Images/product62.webp" />
+                        </div>
+                        <h3>Bougie Gourmande FRAISE DES BOIS</h3>
+                        <p>Du €25,00 EUR</p>
+                      </a>
+                </div>
+                <div class="slider-item">
+                    <a href="./sproduct.html" class="product-item" id="p-7" >
+                        <div class="image-wrapper">
+                        <img src="./Images/product71.webp" alt="Product Image" class="img-product-00" data-hover-image="./Images/product72.webp" />
+                        </div>
+                        <h3>Bougie Gourmande FRAMBOISE</h3>
+                        <p>Du €25,00 EUR</p>
+                      </a>
+                </div>
+                <div class="slider-item">
+                    <a href="./sproduct.html" class="product-item" id="p-8" >
+                        <div class="image-wrapper">
+                        <img src="./Images/product81.webp" alt="Product Image" class="img-product-00" data-hover-image="./Images/product82.webp" />
+                        </div>
+                        <h3>Bougie Gourmande MANGUE PAPAYE</h3>
+                        <p>Du €25,00 EUR</p>
+                      </a>
+                </div>
+                <!-- Repeat this block for add more items -->
+            </div>
+        </div>
+    
+        <div class="slider-controls">
+            <button class="prev">❮</button>
+            <button class="next">❯</button>
+        </div>
+    </div>
+    
+    <!-- Bg Section -->
+    
+    <section class="custom-section">
+        <div class="overlay">
+            <div class="text-content">
+                <p>Devis personnalisé pour des bougies sur mesure ! Créer uniquement pour vous et vos évènements afin d'illuminer l'instant avec une touche unique.</p>
+                <button>Demande de devis</button>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Bruleurs section -->
+    
+    <section class="section-container container2">
+        <div class="text-containe">
+            <h2 class="colorbright">Brûleurs et fondants</h2>
+            <p class="colordark">Créez une ambiance enchanteresse chez vous avec nos brûleurs d'huiles essentielles et cires parfumées.</p>
+            <p class="colordark">Transformez chaque coin en un sanctuaire sensoriel. Choisissez parmi notre sélection raffinée pour une expérience olfactive exceptionnelle.</p>
+            <a href="./brûleurs-diffuseurs.html" class="Main-button">Voir nos brûleurs</a>
+        </div>
+        <div class="image-container">
+            <img src="./Images/Sans_titre_500_x_500_px_-4.webp" alt="Brûleurs et fondants">
+        </div>
+    </section>
+    
+    
+    <!-- Poudre magique -->
+       
+    <section class="magic-powder-section container2">
+        <div class="image-container">
+            <img class="image-new" src="./Images/Nouveau-3.webp" alt="Sand Texture">
+        </div>
+        <div class="text-container">
+            <h2>Poudre magique By Mélinda</h2>
+            <p>
+                Découvrez la magie en poudre avec la <strong>Poudre Magique by Mélinda</strong>! Cette poudre révolutionnaire désodorise délicatement les tissus, qu'il s'agisse de lits, canapés, tapis ou plus encore.
+            </p>
+            <p>
+                Sa formule spéciale offre une fraîcheur persistante pendant 8-10 jours, créant un environnement invitant et agréable.
+            </p>
+            <p>
+                Utilisez-la dans l'aspirateur pour répandre une fragrance subtile à chaque passage. Libérez le pouvoir envoûtant de la <strong>Poudre Magique by Mélinda</strong> et vivez une expérience parfumée qui transcende l'ordinaire.
+            </p>
+            <a href="./poudre-magique-(d'aspirateur).html" class="Main-button white">Voir les senteurs</a>
+        </div>
+    </section>
+    
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content container">
+          <!-- Paragraph -->
+          <p>Soyez les premiers à connaître les nouvelles collections et les offres exclusives</p>
+      
+          <!-- Newsletter Input -->
+          <div class="newsletter">
+            <input type="email" placeholder="E-mail" />
+            <button type="submit">
+              <span>&rarr;</span>
+            </button>
+          </div>          
+      
+          <!-- Card Icons -->
+          <div class="card-icons">
+            <img src="./Images/visa_icon.png" alt="Visa" />
+            <img src="./Images/mastercard_payment_icon.png" alt="MasterCard" />
+            <img src="./Images/amex_card_credit_logo_logos_icon.png" alt="American Express" />
+            <img src="./Images/discover_card_method_icon.png" alt="Discover" />
+            <img src="./Images/paypal_icon.png" alt="PayPal" />
+            <img src="./Images/apple_card_credit_logo_logos_icon.png" alt="Apple Pay" />
+          </div>
+      
+          <!-- Navigation Links -->
+          <nav class="footer-nav">
+            <a href="">© 2024, Un Namour de Bougies</a>
+            <a href="">Politique de remboursement</a>
+            <a href="">Politique de confidentialité</a>
+            <a href="">Conditions d'utilisation</a>
+            <a href="">Politique d'expédition</a>
+            <a href="">Coordonnées Conditions générales de vente</a>
+            <a href="">Mentions légales</a>
+          </nav>
+        </div>
+      </footer>
+      
+    <!-- Addtocart -->
+    <!-- <div class="cart-modal">
+        <div class="cart-content">
+          <button class="close-btn">&times;</button>
+          <p class="item-added">✔ Article ajouté au panier</p>
+          <div class="cart-item">
+            <img src="path_to_product_image.jpg" alt="Product Image" class="img-product-00" class="product-image">
+            <div class="product-details">
+              <p class="product-name">Poudre Magique</p>
+              <p class="product-scent">Senteur: Néroli</p>
+            </div>
+          </div>
+          <div class="cart-actions">
+            <button class="view-cart-btn">Voir le panier (5)</button>
+            <button class="checkout-btn">Procéder au paiement</button>
+            <button class="continue-shopping-btn">Continuer les achats</button>
+          </div>
+        </div>
+      </div> -->
+      
+
+    <script src="./script.Js"></script>
+    <script src="nav.js"></script>
+    <script type="module" src="./auth.js"></script>
+    <script type="module">
+        import { updateCartCount } from './cart-utils.js';
+        document.addEventListener('DOMContentLoaded', updateCartCount);
+    </script>
+</body>
+</html>

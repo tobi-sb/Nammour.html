@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Un Amour de Bougies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"/>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./auth.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <!--Nav-->
+    <!--Nav-->
+<div class="top"><p class="top-p">BIENVENUE SUR LA BOUTIQUE</p></div>
+<nav class="navbar">
+  <div class="container n-flexbox">
+    <div class="navbar-left">
+      <div class="hamburger-menu" id="hamburger" onclick="toggleMenu()">
+        <!-- Hamburger Icon -->
+        <span id="hamburger-icon"><i class="fa-solid fa-bars"></i></span>
+        <!-- Close Icon (Initially hidden) -->
+        <span id="close-icon" style="display: none;"><i class="fa-solid fa-xmark"></i></span>
+      </div>
+      <div class="search-icon">
+        <!-- Search Icon (Initially visible) -->
+        <span id="search-icon" onclick="toggleSearch()"><i class="fa-solid fa-magnifying-glass"></i></span>
+        <!-- Search Form (Initially hidden) -->
+        <div class="search-div" id="search-div">
+          <div class="main_search">
+            <form class="search-form" action="" id="search-form">
+              <input type="text" id="search-input" name="query" placeholder="Search..." required>
+            </form>
+            <img onclick="closeSearch()" src="./Images/cross.svg" alt="" id="cross" class="cross">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navbar-center">
+      <div class="logo">
+        <!-- Replace with your logo -->
+        <a href="./index.Html"><img src="./Images/Logo 2.webp" alt="Logo"></a>
+      </div>
+    </div>
+    <div class="navbar-right">
+      <div class="cart-icon">
+        <!-- Cart Icon -->
+        <a href="./cart.html"><span><i class="fa-solid fa-cart-shopping"></i></span></a>
+        <span class="cart-count">0</span>
+      </div>
+      <div class="auth-icon">
+        <a href="login.html"><span><i class="fa-solid fa-user"></i></span></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hamburger Menu -->
+  <div id="menu" class="menu">
+    <ul>
+      <li><a href="./index.Html">Accueil</a></li>
+      <li><a href="./Catalouge.html">Catalogue</a></li>
+      <li><a href="./bougie-bijoux.html">Bougie Bijoux</a></li>
+      <li><a href="./bougies-gourmandes.html">Bougies gourmandes</a></li>
+      <li><a href="./brûleurs-diffuseurs.html">Brûleurs / Diffuseurs</a></li>
+      <li><a href="./galets-fondants.html">Galets / Fondants</a></li>
+      <li><a href="./poudre-magique.html">Poudre Magique</a></li>
+      <li><a href="./bougie-de-massage.html">Bougie de Massage</a></li>
+      <li><a href="./contact.html">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+        <!-- Hamburger Menu -->
+        <div id="menu" class="menu">
+            <ul>
+                <li><a href="./index.html">Accueil</a></li>
+                <li><a href="./catalouge.html">Catalogue</a></li>
+                <li><a href="./bougie-bijoux.html">Bougie Bijoux</a></li>
+                <li><a href="./bougies-gourmandes.html">Bougies gourmandes</a></li>
+                <li><a href="./brûleurs-diffuseurs.html">Brûleurs / Diffuseurs</a></li>
+                <li><a href="./galets-fondants.html">Galets / Fondants</a></li>
+                <li><a href="./poudre-magique.html">Poudre Magique</a></li>
+                <li><a href="./contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Auth Forms -->
+    <div class="auth-container container">
+        <div class="auth-box">
+            <div class="auth-tabs">
+                <button class="tab-btn active" data-tab="login">Connexion</button>
+                <button class="tab-btn" data-tab="register">Inscription</button>
+            </div>
+
+            <!-- Login Form -->
+            <form id="login-form" class="auth-form active">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Mot de passe</label>
+                    <input type="password" id="login-password" required>
+                </div>
+                <div class="form-group">
+                    <a href="#" class="forgot-password">Mot de passe oublié ?</a>
+                </div>
+                <button type="submit" class="auth-button">Se connecter</button>
+            </form>
+
+            <!-- Register Form -->
+            <form id="register-form" class="auth-form">
+                <div class="form-group">
+                    <label for="register-name">Nom complet</label>
+                    <input type="text" id="register-name" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Mot de passe</label>
+                    <input type="password" id="register-password" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-confirm-password">Confirmer le mot de passe</label>
+                    <input type="password" id="register-confirm-password" required>
+                </div>
+                <button type="submit" class="auth-button">S'inscrire</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="./nav.js"></script>
+    <script type="module" src="./auth.js"></script>
+</body>
+</html> 
