@@ -1462,6 +1462,7 @@ button:hover {
     /* Adjust padding for mobile portrait */
     padding-right: 1.5rem;
     /* Adjust padding for mobile portrait */
+    width: 100%;
   }
 
   .n-flexbox {
@@ -1473,16 +1474,31 @@ button:hover {
     width: 200px;
   }
 
+  .nav_img{
+    width: 100%;
+  }
+
+  .fa-user{
+    font-size: 1.6rem !important;
+  }
+
+  .auth-icon{
+    display: block !important;
+  }
+
+  .cart-count,
+  .fa-cart-shopping{
+    display: none;
+  }
+
   .navbar-left,
   .navbar-right {
-    gap: 5px;
-    /* Reduce gap between items */
-    justify-content: space-around;
+    display: flex;
+    align-items: center;
   }
 
   .hamburger-menu {
     align-self: flex-end;
-    /* Align hamburger menu to the right */
   }
 
   .search-icon {
@@ -1491,17 +1507,11 @@ button:hover {
 
   #search-input {
     width: 10rem;
-    /* Make the search input full width on mobile */
   }
 
   .menu {
-    /* top: 13rem;  Adjust the menu position */
     width: 100%;
-  
-    /* Increase the width of the menu for mobile */
-    height: calc(
-      100vh - 3.23rem
-    ); /* Full viewport height minus navbar height
+    height: calc(100vh - 3.23rem); /* Correction de la syntaxe */
   }
 
   .menu ul li a {
@@ -1562,6 +1572,12 @@ button:hover {
     #cartContainer{
       width: calc(100% - 20px) !important;
     }
+  }
+
+  .fa-user-check{
+    color: #584412;
+    font-size: 1.8rem !important;
+    margin-bottom: 2px;
   }
 }
 
